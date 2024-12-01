@@ -1,0 +1,21 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/eselpo
+      client:
+        provider:
+          keycloak:
+            issuer-uri: http://localhost:8080/realms/eselpo
+            user-name-attribute: preferred_username
+        registration:
+          keycloak:
+            client-id: springsecurity
+            client-secret: NvXLEZejEi9X8XruxHv3RINJ8BbS7Oqt
+            scope:
+              - openid
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+server:
+  port: 8081
